@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ArticleController extends AbstractController
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/", name="homepage", methods={"GET"})
      */
     public function index(ArticleRepository $repo)
     {
@@ -23,6 +23,17 @@ class ArticleController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/article/{id}", name="single_page")
+     */
+    public function pages(ArticleRepository $repo, Article $article)
+    {
+        $article = $repo->find($article->getId());
+        dd($article);
+        return $this->render('article/pages.html.twig', [
+            'posts' => $repo->findAll(),
+        ]);
+    }
     /**
      * @Route("/articleLikes/{id}/likes", name="likes")
      */
