@@ -102,6 +102,15 @@
     "fzaninotto/faker": {
         "version": "v1.9.1"
     },
+    "laminas/laminas-zendframework-bridge": {
+        "version": "1.1.1"
+    },
+    "liorchamla/faker-prices": {
+        "version": "v1.0.1"
+    },
+    "mbezhanov/faker-provider-collection": {
+        "version": "1.2.1"
+    },
     "monolog/monolog": {
         "version": "2.1.1"
     },
@@ -112,7 +121,7 @@
         "version": "2.2.3"
     },
     "php": {
-        "version": "7.2"
+        "version": "7.4"
     },
     "phpdocumentor/reflection-common": {
         "version": "2.2.0"
@@ -122,6 +131,9 @@
     },
     "phpdocumentor/type-resolver": {
         "version": "1.4.0"
+    },
+    "phpunit/php-invoker": {
+        "version": "3.1.1"
     },
     "psr/cache": {
         "version": "1.0.1"
@@ -137,6 +149,21 @@
     },
     "psr/log": {
         "version": "1.1.3"
+    },
+    "sebastian/cli-parser": {
+        "version": "1.0.1"
+    },
+    "sebastian/code-unit": {
+        "version": "1.0.7"
+    },
+    "sebastian/complexity": {
+        "version": "2.0.1"
+    },
+    "sebastian/lines-of-code": {
+        "version": "1.0.1"
+    },
+    "sebastian/type": {
+        "version": "2.3.0"
     },
     "sensio/framework-extra-bundle": {
         "version": "5.2",
@@ -338,21 +365,6 @@
     "symfony/orm-pack": {
         "version": "v2.0.0"
     },
-    "symfony/phpunit-bridge": {
-        "version": "4.3",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "4.3",
-            "ref": "6d0e35f749d5f4bfe1f011762875275cd3f9874f"
-        },
-        "files": [
-            ".env.test",
-            "bin/phpunit",
-            "phpunit.xml.dist",
-            "tests/bootstrap.php"
-        ]
-    },
     "symfony/polyfill-intl-grapheme": {
         "version": "v1.18.1"
     },
@@ -522,6 +534,9 @@
     },
     "twig/twig": {
         "version": "v3.0.5"
+    },
+    "webimpress/safe-writer": {
+        "version": "2.1.0"
     },
     "webmozart/assert": {
         "version": "1.9.1"

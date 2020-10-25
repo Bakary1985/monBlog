@@ -40,6 +40,11 @@ class Article
      */
     private $likes;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $price;
+
     public function __construct()
     {
         $this->likes = new ArrayCollection();
@@ -122,5 +127,17 @@ class Article
             if($likes->getUser() === $user) return true;
         }
         return false;
+    }
+
+    public function getPrice(): ?int
+    {
+        return $this->price;
+    }
+
+    public function setPrice(int $price): self
+    {
+        $this->price = $price;
+
+        return $this;
     }
 }

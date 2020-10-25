@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CardController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="bg-light p-3">
+            <h1>Panier</h1>
+        </div>
+
+        {% if items | length >0  %}
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Produit</th>
+                    <th scope="col">Prix</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in items %}
+
+                    <tr>
+                        <td>{{ item.product.id }}</td>
+                        <td>{{ item.product.price }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.product.price * item.quantity }} €</td>
+                        <td>
+                            <a href="{{ path("card_remove", {"id":item.product.id}) }}">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th colspan="3" class="text-right">Total:</th>
+                    <td>{{ total }} €</td>
+                    <td></td>
+                </tr>
+                </tfoot>
+            </table>
+        {% else %}
+            <p>Votre panier est vide</p>
+        {% endif %}
+    </div>
+{% endblock %}
