@@ -42,7 +42,12 @@
                     <div class="border border-dark rounded p-2">
                         <h3>{{post.title|slice(0, 20)}}</h3>
                         <p>{{post.description |striptags|slice(0, 100)| raw}}</p>
-                        <a href="{{ path("single_page", {"id":post.id})}}) }}" class="btn btn-primary">Lire la suite</a>
+                        <hr>
+                        <a href="{{ path("card_add", {"id":post.id})}}" class="btn btn-success float-left">
+                            <i class="fas fa-shopping-cart mr-1"></i>
+                            Ajouter
+                        </a>
+                        <a href="{{ path("single_page", {"id":post.id})}}) }}" class="btn btn-primary float-right">Lire la suite</a>
                         <a href="{{ path("likes", {"id":post.id})}}" class="btn btn-link">
 
                             {% if app.user and post.getLikesByUser(app.user) %}

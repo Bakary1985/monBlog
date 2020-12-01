@@ -8,6 +8,7 @@ use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
+use Liior\Faker\Prices;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class AppFixtures extends Fixture
@@ -24,6 +25,9 @@ class AppFixtures extends Fixture
     {
         $users=[];
         $faker = Factory::create();
+        $faker->addProvider(new \Bezhanov\Faker\Provider\Commerce($faker));
+        $faker->addProvider(new Prices($faker));
+
         for ($i = 0; $i < 20; $i++) {
             $user = new User();
             $user->setEmail($faker->email);
@@ -37,6 +41,7 @@ class AppFixtures extends Fixture
             $article->setTitle($faker->text(50));
             $article->setDescription('<p>' . join("," ,$faker->paragraphs()) .'</p>');
             $article->setCreatedAt(new \DateTimeImmutable("now"));
+            $article->setPrice($faker->price(20, 200));
             $manager->persist($article);
 
 //            for ($i = 0; $i < mt_rand(0, 10); $i++) {
